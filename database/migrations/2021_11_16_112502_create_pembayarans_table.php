@@ -15,6 +15,20 @@ class CreatePembayaransTable extends Migration
     {
         Schema::create('pembayarans', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('id_booking')->unsigned();
+            $table->bigInteger('id_customer')->unsigned();
+            $table->integer('dp');
+            $table->integer('kekurangan');
+            $table->string('status');
+
+            // fk
+            $table->foreign('id_booking')->references('id')
+            ->on('bookings')->onUpdate('cascade')
+            ->onDelete('cascade');
+
+            $table->foreign('id_customer')->references('id')
+            ->on('customers')->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }

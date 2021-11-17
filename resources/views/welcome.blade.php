@@ -1,17 +1,18 @@
 @extends('layouts.app')
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-hearder">
-                Larapus
+ <div class="container">
+   <div class="row">
+     <div class="col-md-12">
+        <div class="card">
+           <div class="card-header">
+            Larapus
             </div>
             <div class="card-body">
-                Selamat Datang Di <strong>Larapus</strong>
-            </div>
+            Selamat Datang di <strong>Larapus</strong>
             </div>
         </div>
-    </div>
+     </div>
+  </div>
 </div>
 @endsection
+

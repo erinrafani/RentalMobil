@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Mobil;
 use App\Models\Merek;
+use App\Models\Mobil;
 use Illuminate\Http\Request;
 
 class MobilController extends Controller
@@ -47,6 +47,7 @@ class MobilController extends Controller
         $mobil->tarif_sopir = $request->tarif_sopir;
         // upload image / foto
         if ($request->hasFile('gambar')) {
+            $mobil->deleteImage();
             $image = $request->file('gambar');
             $name = rand(1000, 9999) . $image->getClientOriginalName();
             $image->move('images/mobil/', $name);
@@ -94,6 +95,7 @@ class MobilController extends Controller
         $mobil->tarif_sopir = $request->tarif_sopir;
         // upload image / foto
         if ($request->hasFile('gambar')) {
+            $mobil->deleteImage();
             $image = $request->file('gambar');
             $name = rand(1000, 9999) . $image->getClientOriginalName();
             $image->move('images/mobil/', $name);

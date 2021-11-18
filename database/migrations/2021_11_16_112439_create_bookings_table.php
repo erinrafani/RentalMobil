@@ -21,6 +21,7 @@ class CreateBookingsTable extends Migration
             $table->bigInteger('id_admin')->unsigned();
             $table->date('tanggal_booking');
             $table->date('tanggal_mulai');
+            $table->date('tanggal_selesai');
             $table->date('tanggal_kembali');
             $table->integer('denda');
             $table->string('durasi');

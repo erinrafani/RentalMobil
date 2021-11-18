@@ -90,6 +90,14 @@
                                 @enderror
                             </div>
                             <div class="form-group">
+                                <label for="">Masukan Tanggal Selesai</label>
+                                <input type="date" name="tanggal_selesai" value="{{$booking->tanggal_selesai}}" class="form-control @error('tanggal_selesai') is-invalid @enderror">
+                                @error('tanggal_selesai')
+                                    <span class="invalid-feedback" role="alert"></span>
+                                    <strong>{{ $message }}</strong>
+                                @enderror
+                            </div>
+                            <div class="form-group">
                                 <label for="">Masukan Tanggal Kembali</label>
                                 <input type="date" name="tanggal_kembali" value="{{$booking->tanggal_kembali}}" class="form-control @error('tanggal_kembali') is-invalid @enderror">
                                 @error('tanggal_kembali')

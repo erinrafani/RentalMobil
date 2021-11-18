@@ -3,7 +3,7 @@
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
-            <div class="col-sm-12">
+            <div class="col-sm-20">
                 <h1 class="m-0">Data Booking</h1>
             </div>
         </div>
@@ -14,7 +14,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-20">
             <div class="card">
                 <div class="card-header">
                     Data Booking
@@ -31,6 +31,7 @@
                                 <th>ID Admin</th>
                                 <th>Tanggal Booking</th>
                                 <th>Tanggal Mulai</th>
+                                <th>Tanggal Selesai</th>
                                 <th>Tanggal Kembali</th>
                                 <th>Denda</th>
                                 <th>Durasi</th>
@@ -49,6 +50,7 @@
                                 <td>{{$data->id_admin}}</td>
                                 <td>{{$data->tanggal_booking}}</td>
                                 <td>{{$data->tanggal_mulai}}</td>
+                                <td>{{$data->tanggal_selesai}}</td>
                                 <td>{{$data->tanggal_kembali}}</td>
                                 <td>{{$data->denda}}</td>
                                 <td>{{$data->durasi}}</td>

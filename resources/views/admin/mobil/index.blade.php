@@ -48,7 +48,7 @@
                                 <td>{{$data->status_mobil}}</td>
                                 <td>{{$data->tarif_mobil}}</td>
                                 <td>{{$data->tarif_sopir}}</td>
-                                <td><img src="{{$data->image()}}" alt="" style="width:150px; height:150px;" alt="gambar"></td>
+                                <td><img src="{{$data->image()}}" alt="" style="width:150px; height:150px;" alt="Gambar"></td>
                                 <td>
                                     <form action="{{route('mobil.destroy',$data->id)}}" method="post">
                                         @method('delete')

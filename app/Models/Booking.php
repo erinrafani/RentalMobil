@@ -9,8 +9,8 @@ class Booking extends Model
 {
     use HasFactory;
 
-    protected $visible = ['id_mobil', 'id_customer', 'id_sopir', 'id_admin', 'tanggal_booking', 'tanggal_mulai', 'tanggal_kembali', 'denda', 'durasi', 'status', 'jumlah_bayar', 'jumlah_dp'];
-    protected $fillable = ['id_mobil', 'id_customer', 'id_sopir', 'id_admin', 'tanggal_booking', 'tanggal_mulai', 'tanggal_kembali', 'denda', 'durasi', 'status', 'jumlah_bayar', 'jumlah_dp'];
+    protected $visible = ['id_mobil', 'id_customer', 'id_sopir', 'id_admin', 'tanggal_booking', 'tanggal_mulai', 'tanggal_selesai', 'tanggal_kembali', 'denda', 'durasi', 'status', 'jumlah_bayar', 'jumlah_dp'];
+    protected $fillable = ['id_mobil', 'id_customer', 'id_sopir', 'id_admin', 'tanggal_booking', 'tanggal_mulai', 'tanggal_selesai', 'tanggal_kembali', 'denda', 'durasi', 'status', 'jumlah_bayar', 'jumlah_dp'];
     public $timestamps = true;
 
 

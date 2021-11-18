@@ -43,6 +43,10 @@
                         <input type="date" name="tanggal_mulai" value="{{$booking->tanggal_mulai}}" class="form-control" readonly>
                     </div>
                     <div class="form-group">
+                        <label for="">Tanggal Selesai</label>
+                        <input type="date" name="tanggal_selesai" value="{{$booking->tanggal_selesai}}" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
                         <label for="">Tanggal Kembali</label>
                         <input type="date" name="tanggal_kembali" value="{{$booking->tanggal_kembali}}" class="form-control" readonly>
                     </div>

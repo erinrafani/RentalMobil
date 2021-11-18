@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Customer;
 use App\Models\Testimoni;
 use Illuminate\Http\Request;
@@ -14,20 +15,20 @@ class TestimoniController extends Controller
         return view('admin.testimoni.index', compact('testimoni'));
     }
 
-
     public function create()
     {
         $customer = Customer::all();
         return view('admin.testimoni.create', compact('customer'));
-    }
 
+    }
 
     public function store(Request $request)
     {
-        $request->validate([
+        //validasi data
+        $validated = $request->validate([
             'id_customer' => 'required',
             'testimoni' => 'required',
-        ]);
+            ]);
 
         $testimoni = new Testimoni;
         $testimoni->id_customer = $request->id_customer;
@@ -35,7 +36,6 @@ class TestimoniController extends Controller
         $testimoni->save();
         return redirect()->route('testimoni.index');
     }
-
 
     public function show($id)
     {
@@ -43,22 +43,20 @@ class TestimoniController extends Controller
         return view('admin.testimoni.show', compact('testimoni'));
     }
 
-
     public function edit($id)
     {
         $testimoni = Testimoni::findOrFail($id);
         $customer = Customer::all();
         return view('admin.testimoni.edit', compact('testimoni', 'customer'));
-
     }
-
 
     public function update(Request $request, $id)
     {
-        $request->validate([
+        //validasi data
+        $validated = $request->validate([
             'id_customer' => 'required',
             'testimoni' => 'required',
-        ]);
+            ]);
 
         $testimoni = new Testimoni;
         $testimoni->id_customer = $request->id_customer;
@@ -66,7 +64,6 @@ class TestimoniController extends Controller
         $testimoni->save();
         return redirect()->route('testimoni.index');
     }
-
 
     public function destroy($id)
     {

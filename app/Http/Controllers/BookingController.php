@@ -37,6 +37,7 @@ class BookingController extends Controller
             'id_admin' => 'required',
             'tanggal_booking' => 'required',
             'tanggal_mulai' => 'required',
+            'tanggal_selesai' => 'required',
             'tanggal_kembali' => 'required',
             'denda' => 'required',
             'durasi' => 'required',
@@ -52,6 +53,7 @@ class BookingController extends Controller
         $booking->id_admin = $request->id_admin;
         $booking->tanggal_booking = $request->tanggal_booking;
         $booking->tanggal_mulai = $request->tanggal_mulai;
+        $booking->tanggal_selesai = $request->tanggal_selesai;
         $booking->tanggal_kembali = $request->tanggal_kembali;
         $booking->denda = $request->denda;
         $booking->durasi = $request->durasi;
@@ -91,6 +93,7 @@ class BookingController extends Controller
             'id_admin' => 'required',
             'tanggal_booking' => 'required',
             'tanggal_mulai' => 'required',
+            'tanggal_selesai' => 'required',
             'tanggal_kembali' => 'required',
             'denda' => 'required',
             'durasi' => 'required',
@@ -106,6 +109,7 @@ class BookingController extends Controller
         $booking->id_admin = $request->id_admin;
         $booking->tanggal_booking = $request->tanggal_booking;
         $booking->tanggal_mulai = $request->tanggal_mulai;
+        $booking->tanggal_selesai = $request->tanggal_selesai;
         $booking->tanggal_kembali = $request->tanggal_kembali;
         $booking->denda = $request->denda;
         $booking->durasi = $request->durasi;

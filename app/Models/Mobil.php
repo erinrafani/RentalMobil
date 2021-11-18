@@ -19,4 +19,21 @@ class Mobil extends Model
         //melalui fk "author_id"
         return $this->belongsTo('App\Models\Merek', 'id');
     }
+
+    public function image()
+    {
+        if ($this->gambar && file_exists(public_path('images/mobil/' . $this->gambar))) {
+            return asset('images/mobil/' . $this->gambar);
+        } else {
+            return asset('images/no_image.png');
+        }
+    }
+
+    public function deleteImage()
+    {
+        if ($this->gambar && file_exists(public_path('images/mobil/' . $this->gambar))) {
+            return unlink(public_path('images/mobil/' . $this->gambar));
+        }
+
+    }
 }

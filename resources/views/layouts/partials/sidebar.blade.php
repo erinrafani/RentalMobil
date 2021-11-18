@@ -10,7 +10,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{asset('assets/dist/img/erin.jpeg')}}" class="img-circle elevation-2" alt="User Image">
+          <img src="{{asset('assets/dist/img/mobil.jpeg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
             @auth
@@ -48,21 +48,51 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link active">
+                <a href="/admin" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
+                  <p>Data Admin</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="/customer" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
+                  <p>Data Customer</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="/sopir" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
+                  <p>Data Sopir</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/merek" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Merek</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/mobil" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Mobil</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/booking" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Booking</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/pembayaran" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Pembayaran</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/testimoni" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Testimoni</p>
                 </a>
               </li>
             </ul>

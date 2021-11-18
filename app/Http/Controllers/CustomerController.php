@@ -7,79 +7,85 @@ use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        $customer = Customer::all();
+        return view('admin.customer.index', compact('customer'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('admin.customer.create');
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        //validasi data
+        $validated = $request->validate([
+            'name' => 'required',
+            'nomor_hp' => 'required',
+            'jenis_kelamin' => 'required',
+            'agama' => 'required',
+            'alamat' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        $customer = new Customer;
+        $customer->name = $request->name;
+        $customer->nomor_hp = $request->nomor_hp;
+        $customer->jenis_kelamin = $request->jenis_kelamin;
+        $customer->agama = $request->agama;
+        $customer->alamat = $request->alamat;
+        $customer->email = $request->email;
+        $customer->password = $request->password;
+        $customer->save();
+        return redirect()->route('customer.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Customer  $customer
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Customer $customer)
+    public function show($id)
     {
-        //
+        $customer = Customer::findOrFail($id);
+        return view('admin.customer.show', compact('customer'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Customer  $customer
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Customer $customer)
+    public function edit($id)
     {
-        //
+        $customer = Customer::findOrFail($id);
+        return view('admin.customer.edit', compact('customer'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Customer  $customer
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Customer $customer)
+    public function update(Request $request, $id)
     {
-        //
+        //validasi data
+        $validated = $request->validate([
+            'name' => 'required',
+            'nomor_hp' => 'required',
+            'jenis_kelamin' => 'required',
+            'agama' => 'required',
+            'alamat' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        $customer = Customer::findOrFail($id);
+        $customer->name = $request->name;
+        $customer->nomor_hp = $request->nomor_hp;
+        $customer->jenis_kelamin = $request->jenis_kelamin;
+        $customer->agama = $request->agama;
+        $customer->alamat = $request->alamat;
+        $customer->email = $request->email;
+        $customer->password = $request->password;
+        $customer->save();
+        return redirect()->route('customer.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Customer  $customer
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Customer $customer)
+    public function destroy($id)
     {
-        //
+        $customer = Customer::findOrFail($id);
+        $customer->delete();
+        return redirect()->route('customer.index');
     }
 }

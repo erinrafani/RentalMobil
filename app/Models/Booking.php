@@ -46,6 +46,6 @@ class Booking extends Model
     {
         //data dari model "book" bisa dimiliki oleh model "Author"
         //melalui fk "author_id"
-        return $this->belongsTo('App\Models\Pembayaran', 'id');
+        return $this->hasMany('App\Models\Pembayaran', 'id_booking');
     }
 }

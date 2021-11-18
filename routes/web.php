@@ -5,6 +5,9 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SopirController;
 use App\Http\Controllers\MerekController;
 use App\Http\Controllers\MobilController;
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\TestimoniController;
+use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -13,6 +16,10 @@ use App\Models\Customer;
 use App\Models\Sopir;
 use App\Models\Merek;
 use App\Models\Mobil;
+use App\Models\Booking;
+use App\Models\Testimoni;
+use App\Models\Pembayaran;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +69,12 @@ Route::resource('merek', SopirController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('mobil', MobilController::class);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('booking', BookingController::class);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('testimoni', TestimoniController::class);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('pembayaran', PembayaranController::class);

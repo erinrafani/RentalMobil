@@ -17,6 +17,6 @@ class Testimoni extends Model
     {
         //data model "author" bisa memiliki banyak data
         //dari model "book" melalui fk "author_id"
-        $this->hasMany('App\Models\Customer', 'id_customer');
+        $this->belongsTo('App\Models\Customer', 'id');
     }
 }

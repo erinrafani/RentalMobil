@@ -1,85 +1,77 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Customer;
 use App\Models\Testimoni;
 use Illuminate\Http\Request;
 
 class TestimoniController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        $testimoni = Testimoni::all();
+        return view('admin.testimoni.index', compact('testimoni'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        //
+        $customer = Customer::all();
+        return view('admin.testimoni.create', compact('customer'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'id_customer' => 'required',
+            'testimoni' => 'required',
+        ]);
+
+        $testimoni = new Testimoni;
+        $testimoni->id_customer = $request->id_customer;
+        $testimoni->testimoni = $request->testimoni;
+        $testimoni->save();
+        return redirect()->route('testimoni.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Testimoni  $testimoni
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Testimoni $testimoni)
+
+    public function show($id)
     {
-        //
+        $testimoni = Testimoni::findOrFail($id);
+        return view('admin.testimoni.show', compact('testimoni'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Testimoni  $testimoni
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Testimoni $testimoni)
+
+    public function edit($id)
     {
-        //
+        $testimoni = Testimoni::findOrFail($id);
+        $customer = Customer::all();
+        return view('admin.testimoni.edit', compact('testimoni', 'customer'));
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Testimoni  $testimoni
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Testimoni $testimoni)
+
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'id_customer' => 'required',
+            'testimoni' => 'required',
+        ]);
+
+        $testimoni = new Testimoni;
+        $testimoni->id_customer = $request->id_customer;
+        $testimoni->testimoni = $request->testimoni;
+        $testimoni->save();
+        return redirect()->route('testimoni.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Testimoni  $testimoni
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Testimoni $testimoni)
+
+    public function destroy($id)
     {
-        //
+        $testimoni = Testimoni::findOrFail($id);
+        $testimoni->delete();
+        return redirect()->route('testimoni.index');
     }
 }

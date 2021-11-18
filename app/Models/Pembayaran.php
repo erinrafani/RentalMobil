@@ -24,6 +24,6 @@ class Pembayaran extends Model
     {
         //data model "author" bisa memiliki banyak data
         //dari model "book" melalui fk "author_id"
-        $this->hasMany('App\Models\Booking', 'id_booking');
+        $this->belongsTo('App\Models\Booking', 'id');
     }
 }
